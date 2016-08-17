@@ -10,9 +10,9 @@
     tools:context="com.bwf.tuanche.MainActivity">
 
 
-    <ListView
-        android:id="@+id/lv_test"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="30dp"
+       android:id="@+id/btn"/>
 
 </RelativeLayout>

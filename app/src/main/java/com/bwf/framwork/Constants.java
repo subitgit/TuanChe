@@ -13,4 +13,9 @@ public class Constants {
     //数据库所有的表
     public static String[] TABLES = new String[]{};
 
+    public static final String TUANCHE_SERVER = "http://123.56.145.151:8080/TuanCheNetWork/";
+
+   public static final String BRANDCAR_SELECT= "bwf_TuanChe_SelectTopBrand";
+   public static final String BRANDCAR_SELECT_IN=TUANCHE_SERVER +BRANDCAR_SELECT;
+
 }

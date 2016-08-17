@@ -19,6 +19,13 @@ public class HttpHelper {
                 .build()
                 .execute(callBack);
     }
-
+    public static void getBrandCarSelect(String url,int cityId,HttpCallBack callBack){
+        OkHttpUtils
+                .post()
+              //  .addParams("cityId",cityId+"")
+                .url("http://123.56.145.151:8080/TuanCheNetWork/bwf_TuanChe_SelectTopBrand?cityId=156")
+                .build()
+                .execute(callBack);
+    }
 
 }

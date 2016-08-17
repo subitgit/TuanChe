@@ -33,7 +33,6 @@ public abstract class HttpCallBack<T extends BaseBean> extends StringCallback {
 
         if (StringUtils.isNotEmpty(response)){
 
-
             try{
 
                 BaseBean baseBean = JSON.parseObject(response, BaseBean.class);
