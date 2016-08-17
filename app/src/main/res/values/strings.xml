@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TuanChe</string>
+
+    <string name="man_num">%s人</string>
+    <string name="man_num_string">本期已报名</string>
+    <string name="question_mask">"?"</string>
+
+    <string name="groupbuy_date">具体时间以团长通知为准</string>
 </resources>

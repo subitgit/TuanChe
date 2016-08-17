@@ -1,7 +1,12 @@
 package com.bwf.framwork.http;
 
 
+import com.bwf.framwork.utils.UrlUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import okhttp3.Call;
+import okhttp3.Response;
 
 /**
  * Created by Lizhangfeng on 2016/7/13 0013.
@@ -10,15 +15,16 @@ import com.zhy.http.okhttp.OkHttpUtils;
 public class HttpHelper {
 
 
-    public static void getDetail(String url,String pageNo,String pageSize,HttpCallBack callBack){
+    public static void getDetail(String cityId ,String brandId,String styleId,HttpCallBack callBack){
         OkHttpUtils
                 .post()
-                .url(url)
-                .addParams("pageNo", pageNo)
-                .addParams("pageSize", pageSize)
+                .url(UrlUtils.CAR_DETAIL_URL)
+                .addParams("cityId", cityId )
+                .addParams("styleId", styleId )
+                .addParams("brandId", brandId )
                 .build()
                 .execute(callBack);
-    }
 
+    }
 
 }

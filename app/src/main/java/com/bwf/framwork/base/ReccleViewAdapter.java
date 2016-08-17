@@ -10,7 +10,7 @@ import com.bwf.tuanche.R;
  * Created by Lizhangfeng on 2016/8/16 0016.
  * Description:
  */
-public class ReccleViewAdapter extends BaseListAdpter<String, ReccleViewAdapter.MyViewHodler> {
+public class ReccleViewAdapter extends BaseListAdpter<String,ReccleViewAdapter.MyViewHodler> {
 
     public ReccleViewAdapter(Context context) {
         super(context);
@@ -35,7 +35,7 @@ public class ReccleViewAdapter extends BaseListAdpter<String, ReccleViewAdapter.
 
     }
 
-    public class MyViewHodler extends ViewHolder {
+    public class MyViewHodler extends BaseListAdpter.ViewHolder {
 
         public TextView tv_test;
 
