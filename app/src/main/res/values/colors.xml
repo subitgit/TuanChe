@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <!--标题颜色-->
+    <color name="color_title_bg">#f6f6f6</color>
+    <color name="color_title_divider">#e2e2e2</color>
+    <color name="color_title_pressed">#c4c4c4</color>
 </resources>
