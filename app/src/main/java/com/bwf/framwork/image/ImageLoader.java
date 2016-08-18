@@ -1,6 +1,5 @@
 package com.bwf.framwork.image;
 
-import android.content.Context;
 import android.net.Uri;
 
 import com.bwf.framwork.utils.DisplayUtil;

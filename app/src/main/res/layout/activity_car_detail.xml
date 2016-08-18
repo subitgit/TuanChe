@@ -45,8 +45,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/color_title_tv_gray"
-                android:text="奥迪A4L-"/>
+                android:text="车型-"
+                android:textColor="@color/color_title_tv_gray"/>
             <TextView
                 android:id="@+id/tv_location"
                 android:layout_toRightOf="@id/tv_name"
@@ -55,8 +55,7 @@
                 android:textSize="18sp"
                 android:drawableRight="@mipmap/icon_xiajiantou"
                 android:textColor="@color/color_title_tv_red"
-                android:drawablePadding="2dp"
-                android:text="成都站"/>
+                android:drawablePadding="2dp"/>
 
         </RelativeLayout>
     </RelativeLayout>
@@ -76,6 +75,7 @@
                 android:name="com.bwf.tuanche.ui.detail.fragment.CarDetailFragment1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <fragment
                 android:id="@+id/fragment2"
                 android:name="com.bwf.tuanche.ui.detail.fragment.CarDetailFragment2"

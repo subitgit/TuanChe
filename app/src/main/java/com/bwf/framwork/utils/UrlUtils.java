@@ -11,5 +11,8 @@ public class UrlUtils {
     /**汽车详情**/
     public static final String CAR_DETAIL_URL = BASE_URL + "/bwf_TuanChe_BuyInfoServlet";
 
+    /**所有评论**/
+    public static final String ALL_COMMENT_URL = BASE_URL + "/bwf_TuanChe_BuyInfoEvaluateServlet";
+
 
 }

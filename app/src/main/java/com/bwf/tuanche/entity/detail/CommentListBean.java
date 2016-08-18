@@ -12,15 +12,15 @@ public class CommentListBean {
 
     public String commentDate;
 
-    public int score;
+    public String score;
 
     public String content;
 
-    public String memberPic;
+    public String memberPic;//头像图片
 
     public List<CommentPicListBean> commentPicList ;
 
-    public boolean fine;
+    public String fine;
 
 
     @Override

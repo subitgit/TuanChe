@@ -12,6 +12,7 @@
         android:layout_height="250dp"
         android:scaleType="centerCrop"
         fresco:placeholderImage="@mipmap/default_special_1"
+
         fresco:placeholderImageScaleType="centerCrop" />
 
     <View

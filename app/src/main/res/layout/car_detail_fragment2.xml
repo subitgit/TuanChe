@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/color_white"
     android:orientation="vertical">
 
@@ -32,25 +32,58 @@
             android:textStyle="bold"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="4.6分"
             android:layout_marginRight="10dp"
             android:textSize="13sp"/>
 
         <RatingBar
+            android:id="@+id/ratingBar"
             style="@style/RadingStyle"
             android:layout_toLeftOf="@id/tv_commentTotal"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:isIndicator="true"
+            android:layout_marginRight="6dp"
             android:numStars="5"
             android:rating="4.6"
             android:stepSize="0.1"
             />
 
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_title_divider" />
     </RelativeLayout>
 
+    <com.bwf.tuanche.view.MeasureHeightListView
+        android:id="@+id/lv_appraise"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:padding="8dp"
+        android:layout_height="wrap_content"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_title_divider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_allcomment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="查看全部32人评价"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/color_title_tv_red"
+            android:drawableRight="@mipmap/icon_arraw_right"
+            />
+
+    </RelativeLayout>
 
 </LinearLayout>

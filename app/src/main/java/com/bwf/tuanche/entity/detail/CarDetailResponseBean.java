@@ -6,7 +6,7 @@ package com.bwf.tuanche.entity.detail;
  */
 public class CarDetailResponseBean {
 
-    public double commentTotal;
+    public String commentTotal;
 
     public String regular4sShop;
 
@@ -24,9 +24,9 @@ public class CarDetailResponseBean {
 
     public String groupbuyWeek;
 
-    public int salerId;
+    public String salerId;
 
-    public int id;
+    public String id;
 
     public String logo;//汽车大图片
 
@@ -36,11 +36,11 @@ public class CarDetailResponseBean {
 
     public String content;
 
-    public int isBuy;
+    public String isBuy;
 
-    public int manNum;
+    public String manNum;
 
-    public int state;
+    public String state;
 
     public String isCompensate;
 
@@ -64,9 +64,9 @@ public class CarDetailResponseBean {
 
     public String passNum;
 
-    public int brandGroupStyleNum;
+    public String brandGroupStyleNum;
 
-    public int brandGroupStyleManNum;
+    public String brandGroupStyleManNum;
 
     public String shareBrandTitle;
 
@@ -80,15 +80,15 @@ public class CarDetailResponseBean {
 
     public String tcbzDesc;
 
-    public int brandId;
+    public String brandId;
 
-    public int styleId;
+    public String styleId;
 
     public String saveUpString;//累计为团友额外
 
     public String saveUpMoney;//节省32.0万
 
-    public boolean special;
+    public String special;
 
 
     @Override

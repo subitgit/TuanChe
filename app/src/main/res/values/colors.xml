@@ -20,6 +20,7 @@
     <color name="color_tv_deeper_gray">#212121</color>
 
     <!--背景颜色-->
-    <color name="color_tv_groupbuy_default">#FFFD7574</color>
+    <color name="color_tv_groupbuy_default">#fffd7574</color>
+    <color name="translucent_gray" >#77222222</color>
 
 </resources>

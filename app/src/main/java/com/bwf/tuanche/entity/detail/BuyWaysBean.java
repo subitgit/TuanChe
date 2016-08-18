@@ -11,9 +11,9 @@ public class BuyWaysBean {
 
     public List<BuyWayListBean> buyWayList ;
 
-    public int showWhere;
+    public String showWhere;
 
-    public int isMust;
+    public String isMust;
 
     @Override
     public String toString() {

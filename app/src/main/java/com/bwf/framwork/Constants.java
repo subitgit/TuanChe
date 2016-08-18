@@ -13,4 +13,7 @@ public class Constants {
     //数据库所有的表
     public static String[] TABLES = new String[]{};
 
+    //列表加载每页item个数
+    public static int COUNTT = 10;
+
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:background="@color/translucent_gray"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/topPart"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_qq"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="QQ"
+                android:drawableTop="@mipmap/share_qq"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_qzone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="QQ空间"
+                android:gravity="center"
+                android:drawableTop="@mipmap/share_qzone"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:layout_below="@id/topPart"
+            android:gravity="center"
+            android:padding="14sp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:background="@drawable/selector_share_cancel"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

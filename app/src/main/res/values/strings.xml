@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">TuanChe</string>
 
+
     <string name="man_num">%s人</string>
     <string name="man_num_string">本期已报名</string>
     <string name="question_mask">"?"</string>
-
     <string name="groupbuy_date">具体时间以团长通知为准</string>
+
+    <!--总评分-->
+    <string name="comment_num">%s分</string>
+    <string name="total_comment_num">查看全部%s人评价</string>
+
+    <string name="location_name">%s站</string>
 </resources>
