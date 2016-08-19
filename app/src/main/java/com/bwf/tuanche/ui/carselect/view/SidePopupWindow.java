@@ -154,7 +154,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
                         lv_pupwin_carsle_hot.setVisibility(View.GONE);
                         lv_pupwin_carsle_price.setVisibility(View.VISIBLE);
                     }
-                    lav_brandcar_sel.setVisibility(View.VISIBLE);
+                    lav_brandcar_sel.setVisibility(View.GONE);
                     lav_brandcar_sel.dismiss();
 
                 }
