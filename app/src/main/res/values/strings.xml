@@ -3,4 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="brandcar">品牌选车</string>
+    <string name="optioncar">条件选车</string>
+    <string name="carprice">价格</string>
+    <string name="carlevel">级别</string>
+    <string name="cnylevel">国别</string>
+    <string name="displacement">排量</string>
+    <string name="reset">重置</string>
+    <string name="checkcar">查看</string>
+    <string name="brandhot">热门</string>
+    <string name="brandprice">价格</string>
 </resources>

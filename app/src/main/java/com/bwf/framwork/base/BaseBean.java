@@ -10,6 +10,6 @@ public class BaseBean{
 
     public String msg;//返回msg
 
-    //public T result;//数据结果
+    public String result;//数据结果
 
 }

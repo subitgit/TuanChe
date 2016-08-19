@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_pupwin_carsle_hot"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@drawable/base_tabpager_indicator_selected"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/brandhot"
+            android:textSize="@dimen/lable25" />
+
+        <TextView
+            android:id="@+id/tv_pupwin_carsle_price"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/brandprice"
+            android:textSize="@dimen/lable25" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_pupwin_carsle_hot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
+
+    <ListView
+        android:id="@+id/lv_pupwin_carsle_price"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:visibility="gone" />
+
+</LinearLayout>

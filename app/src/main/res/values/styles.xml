@@ -7,5 +7,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="SidePopwinAnmi">
+        <item name="android:windowEnterAnimation">@anim/sidepop_in</item>
+        <item name="android:windowExitAnimation">@anim/sidepop_out</item>
+
+    </style>
 
 </resources>

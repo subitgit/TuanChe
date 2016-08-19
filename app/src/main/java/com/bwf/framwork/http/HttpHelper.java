@@ -19,11 +19,37 @@ public class HttpHelper {
                 .build()
                 .execute(callBack);
     }
-    public static void getBrandCarSelect(String url,int cityId,HttpCallBack callBack){
+    public static void getBrandCarSelect(String url,String cityId,HttpArrayCallBack callBack){
         OkHttpUtils
                 .post()
-              //  .addParams("cityId",cityId+"")
-                .url("http://123.56.145.151:8080/TuanCheNetWork/bwf_TuanChe_SelectTopBrand?cityId=156")
+                .addParams("cityId",cityId+"")
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getBrandCarSelectHot(String url,String cityId,HttpCallBack callBack){
+        OkHttpUtils
+                .post()
+                .addParams("cityId",cityId)
+                .addParams("isBuy","2")
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getOptionSelect(String url,HttpCallBack callBack){
+        OkHttpUtils
+                .post()
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getPopWinCarList(String url,String cityId,String brandId,int type,HttpArrayCallBack callBack){
+        OkHttpUtils
+                .post()
+                .addParams("cityId",cityId+"")
+                .addParams("type",type+"")
+                .addParams("brandId",brandId)
+                .url(url)
                 .build()
                 .execute(callBack);
     }

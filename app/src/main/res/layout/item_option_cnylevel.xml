@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_option_cnylevel"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/tv_option_cnylevel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="2"
+        android:gravity="right|center_vertical"
+        android:textSize="@dimen/lable25" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+             />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_option_cnylevel"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            fresco:actualImageScaleType="fitCenter"
+            fresco:placeholderImage="@mipmap/icon_default_color_tone"
+            fresco:placeholderImageScaleType="fitCenter" />
+    </LinearLayout>
+
+</LinearLayout>

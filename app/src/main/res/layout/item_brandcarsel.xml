@@ -5,6 +5,8 @@
     android:orientation="vertical">
     <TextView
         android:id="@+id/tv_lable_carsel"
+        android:textSize="@dimen/lable25"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ListView

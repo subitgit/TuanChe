@@ -11,55 +11,32 @@ import java.util.List;
  */
 public class BrandCarBean implements Parcelable {
 
-    private int id;
+    public String id;
 
-    private String name;
+    public String name;
 
-    private String logo;
+    public String logo;
 
-    private int baseNum;
+    public String baseNum;
 
-    private int modelType;
+    public String modelType;
 
-    public void setId(int id){
-        this.id = id;
-    }
-    public int getId(){
-        return this.id;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return this.name;
-    }
-    public void setLogo(String logo){
-        this.logo = logo;
-    }
-    public String getLogo(){
-        return this.logo;
-    }
-    public void setBaseNum(int baseNum){
-        this.baseNum = baseNum;
-    }
-    public int getBaseNum(){
-        return this.baseNum;
-    }
-    public void setModelType(int modelType){
-        this.modelType = modelType;
-    }
-    public int getModelType(){
-        return this.modelType;
-    }
+
+    public String pinyin;
+
+
+    public String penname;
 
     @Override
     public String toString() {
         return "BrandCarBean{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", logo='" + logo + '\'' +
-                ", baseNum=" + baseNum +
-                ", modelType=" + modelType +
+                ", baseNum='" + baseNum + '\'' +
+                ", modelType='" + modelType + '\'' +
+                ", pinyin='" + pinyin + '\'' +
+                ", penname='" + penname + '\'' +
                 '}';
     }
 
@@ -70,22 +47,26 @@ public class BrandCarBean implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeString(this.id);
         dest.writeString(this.name);
         dest.writeString(this.logo);
-        dest.writeInt(this.baseNum);
-        dest.writeInt(this.modelType);
+        dest.writeString(this.baseNum);
+        dest.writeString(this.modelType);
+        dest.writeString(this.pinyin);
+        dest.writeString(this.penname);
     }
 
     public BrandCarBean() {
     }
 
     protected BrandCarBean(Parcel in) {
-        this.id = in.readInt();
+        this.id = in.readString();
         this.name = in.readString();
         this.logo = in.readString();
-        this.baseNum = in.readInt();
-        this.modelType = in.readInt();
+        this.baseNum = in.readString();
+        this.modelType = in.readString();
+        this.pinyin = in.readString();
+        this.penname = in.readString();
     }
 
     public static final Parcelable.Creator<BrandCarBean> CREATOR = new Parcelable.Creator<BrandCarBean>() {
