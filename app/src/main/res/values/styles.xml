@@ -21,4 +21,12 @@
         <item name="android:progressDrawable">@drawable/rating_bar_small</item>
     </style>
 
+    <style name="style_share_window_anim">
+        <item name="android:windowEnterAnimation">@anim/anim_share_window_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_share_window_exit</item>
+
+    </style>
+
+    <style name="Theme.UMDefault" parent="android:style/Theme.NoTitleBar"></style>
+
 </resources>

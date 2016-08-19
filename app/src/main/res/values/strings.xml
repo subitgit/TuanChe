@@ -12,4 +12,5 @@
     <string name="total_comment_num">查看全部%s人评价</string>
 
     <string name="location_name">%s站</string>
+    <string name="price_content" >1、团长还在帮你砍价，还不确定低价\n2、团购价格比较低，厂家不允许公开，公开后团购可能取消，从而影响团友的利益</string>
 </resources>

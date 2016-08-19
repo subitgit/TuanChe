@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.umeng.socialize.PlatformConfig;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -27,6 +28,16 @@ public class MyApplication extends Application {
         Fresco.initialize(this);
         //初始化okhttp
         initOkhttp();
+
+        //初始化第三方SDK
+        initThirdSdk();
+
+    }
+
+    private void initThirdSdk() {
+
+        PlatformConfig.setQQZone("1105621090", "Nm2jqr30Ra4RTU23");
+        // QQ和Qzone appid appkey
 
     }
 

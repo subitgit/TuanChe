@@ -1,7 +1,6 @@
 package com.bwf.tuanche.ui.detail.adapter;
 
 import android.content.Context;
-import android.media.Rating;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
