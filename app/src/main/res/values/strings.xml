@@ -14,4 +14,6 @@
     <string name="checkcar">查看</string>
     <string name="brandhot">热门</string>
     <string name="brandprice">价格</string>
+    <string name="loadfail">加载失败</string>
+
 </resources>

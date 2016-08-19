@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
+
     <View
         android:id="@+id/view_sidepop"
         android:layout_width="0dp"

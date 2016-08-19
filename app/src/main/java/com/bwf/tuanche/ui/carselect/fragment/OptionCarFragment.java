@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bwf.framwork.Constants;
@@ -17,6 +18,7 @@ import com.bwf.tuanche.ui.carselect.adapter.optionselcar.CarLevelAdapter;
 import com.bwf.tuanche.ui.carselect.adapter.optionselcar.CnyLevelAdapter;
 import com.bwf.tuanche.ui.carselect.adapter.optionselcar.DisplacementLevelAdapter;
 import com.bwf.tuanche.ui.carselect.bean.option.OptionResultBean;
+import com.bwf.tuanche.ui.carselect.view.LoadAnimView;
 
 /**
  * 在线选车
@@ -30,7 +32,8 @@ public class OptionCarFragment extends BaseFragment {
     private CnyLevelAdapter cnyadapter;
     private DisplacementLevelAdapter disadapter;
     private OptionResultBean resultBean;
-
+    private ScrollView slv_option_car;
+    private LoadAnimView lav_option_car;
     @Override
     protected int getResource() {
         return R.layout.fragment_option_car;
@@ -43,11 +46,14 @@ public class OptionCarFragment extends BaseFragment {
 
     @Override
     protected void initView(View rootView) {
+        slv_option_car = findViewByIdNoCast(R.id.slv_option_car);
+        lav_option_car = findViewByIdNoCast(R.id.lav_option_car);//加载动画
         rlv_carlevel = findViewByIdNoCast(R.id.rlv_carlevel);
         rlv_cnylevel = findViewByIdNoCast(R.id.rlv_cnylevel);
         rlv_displacement = findViewByIdNoCast(R.id.rlv_displacement);
         btn_option_reset = findViewByIdNoCast(R.id.btn_option_reset);
         btn_option_check = findViewByIdNoCast(R.id.btn_option_check);
+
     }
 
     @Override
@@ -79,6 +85,7 @@ public class OptionCarFragment extends BaseFragment {
             caradapter.notifyDataSetChanged();
             cnyadapter.notifyDataSetChanged();
             disadapter.notifyDataSetChanged();
+
         }
     }
 
@@ -95,16 +102,19 @@ public class OptionCarFragment extends BaseFragment {
     }
 
     private void getData() {
+        lav_option_car.loadAnim();
         HttpHelper.getOptionSelect(Constants.OPTION_SELECT_URL, new HttpCallBack<OptionResultBean>() {
             @Override
             public void onSuccess(OptionResultBean result) {
                 resultBean = result;
                 setAdapterData();
+                lav_option_car.dismiss();
+                slv_option_car.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onFail(String errMsg) {
-
+                lav_option_car.loadfail();
             }
         });
     }

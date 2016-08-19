@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:gravity="center"
     android:layout_margin="10dp"
     android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,12 +33,19 @@
             android:text="@string/brandprice"
             android:textSize="@dimen/lable25" />
     </LinearLayout>
+    <com.bwf.tuanche.ui.carselect.view.LoadAnimView
+        android:id="@+id/lav_brandcar_sel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_weight="1"/>
 
     <ListView
         android:id="@+id/lv_pupwin_carsle_hot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:visibility="gone"
         android:background="@color/white"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
