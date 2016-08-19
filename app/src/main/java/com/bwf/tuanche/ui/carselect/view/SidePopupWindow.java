@@ -38,6 +38,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
     private PopCarSleAdapter hotAdapter, priceAdapter;
     private List<PopSelCarBean> carBeans;
     private View view_sidepop;
+    private LoadAnimView lav_brandcar_sel;
     public void setRequestParams(String cityId, String brandId) {
         this.cityId = cityId;
         this.brandId = brandId;
@@ -79,6 +80,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
         tv_pupwin_carsle_price.setOnClickListener(this);
         view_sidepop.setOnClickListener(this);
 
+        lav_brandcar_sel = (LoadAnimView) view.findViewById(R.id.lav_brandcar_sel);
         lv_pupwin_carsle_hot = (ListView) view.findViewById(R.id.lv_pupwin_carsle_hot);
         lv_pupwin_carsle_price = (ListView) view.findViewById(R.id.lv_pupwin_carsle_price);
 
@@ -101,8 +103,6 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
                     tv_pupwin_carsle_price.setTextColor(Color.parseColor("#000000"));
                     tv_pupwin_carsle_hot.setBackground(context.getDrawable(base_tabpager_indicator_selected));
                     tv_pupwin_carsle_price.setBackgroundColor(Color.parseColor("#EEEEEE"));
-                    lv_pupwin_carsle_hot.setVisibility(View.VISIBLE);
-                    lv_pupwin_carsle_price.setVisibility(View.GONE);
                     getData();
                 }
                 break;
@@ -114,8 +114,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
                     tv_pupwin_carsle_price.setTextColor(Color.parseColor("#FF4081"));
                     tv_pupwin_carsle_hot.setBackgroundColor(Color.parseColor("#EEEEEE"));
                     tv_pupwin_carsle_price.setBackground(context.getDrawable(base_tabpager_indicator_selected));
-                    lv_pupwin_carsle_hot.setVisibility(View.GONE);
-                    lv_pupwin_carsle_price.setVisibility(View.VISIBLE);
+
                     priceAdapter.settList(carBeans);
                     priceAdapter.notifyDataSetChanged();
 
@@ -129,6 +128,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
     }
 
     private void getData() {
+        lav_brandcar_sel.loadAnim();
         HttpHelper.getPopWinCarList(Constants.OPTION_POPWIN_SELECT_URL, cityId, brandId, type, new HttpArrayCallBack<PopSelCarResultBean>() {
             @Override
             public void onSuccess(List<PopSelCarResultBean> result) {
@@ -144,19 +144,25 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
                     carBeans = beans;
                     PopSelCarBean.orderByName(carBeans);
                     if (type == 0) {
+                        lv_pupwin_carsle_hot.setVisibility(View.VISIBLE);
+                        lv_pupwin_carsle_price.setVisibility(View.GONE);
                         hotAdapter.settList(carBeans);
                         hotAdapter.notifyDataSetChanged();
                     } else if (type == 1) {
                         priceAdapter.settList(carBeans);
                         priceAdapter.notifyDataSetChanged();
+                        lv_pupwin_carsle_hot.setVisibility(View.GONE);
+                        lv_pupwin_carsle_price.setVisibility(View.VISIBLE);
                     }
+                    lav_brandcar_sel.setVisibility(View.VISIBLE);
+                    lav_brandcar_sel.dismiss();
 
                 }
             }
 
             @Override
             public void onFail(String errMsg) {
-
+                lav_brandcar_sel.loadfail();
             }
         });
     }

@@ -1,18 +1,27 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.bwf.tuanche.ui.carselect.fragment.BrandCarFragment">
 
-    <ScrollView
+    <com.bwf.tuanche.ui.carselect.view.LoadAnimView
+        android:id="@+id/lav_brand"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sl_brandcar_select">
+        android:layout_height="match_parent"/>
+
+    <ScrollView
+        android:layout_centerInParent="true"
+        android:id="@+id/sl_brandcar_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <LinearLayout
             android:id="@+id/ll_brandcar_select"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+           />
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

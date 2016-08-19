@@ -26,6 +26,7 @@ import com.bwf.tuanche.ui.carselect.adapter.brandsel.HotCarGridAdapter;
 import com.bwf.tuanche.ui.carselect.bean.BrandCarBean;
 import com.bwf.tuanche.ui.carselect.bean.BrandCarRessult;
 import com.bwf.tuanche.ui.carselect.pubwincallback.BrandId;
+import com.bwf.tuanche.ui.carselect.view.LoadAnimView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class BrandCarFragment extends BaseFragment implements Handler.Callback ,
     private LinearLayout ll_brandcar_select;
     private Handler handler;
     private BrandId brandId;
+    private LoadAnimView lav_brand;
     //  private List<String> names;
     private String cityId = "156";
     private String convertname = "";
@@ -54,14 +56,16 @@ public class BrandCarFragment extends BaseFragment implements Handler.Callback ,
     @Override
     protected void beforeInitView() {
         handler = new Handler(this);
-        getData();
-        getListData();
+
         // names = new ArrayList<>();
     }
 
     @Override
     protected void initView(View rootView) {
         ll_brandcar_select = findViewByIdNoCast(R.id.ll_brandcar_select);
+        lav_brand = findViewByIdNoCast(R.id.lav_brand);
+        getData();
+        getListData();
     }
 
     @Override
@@ -130,9 +134,12 @@ public class BrandCarFragment extends BaseFragment implements Handler.Callback ,
         lv_carsel.setAdapter(adapter);
         ListViewUtils.measureListViewHeight(lv_carsel);
         ll_brandcar_select.addView(view);
+        ll_brandcar_select.setVisibility(View.VISIBLE);
+        lav_brand.dismiss();
     }
 
     private void getData() {
+        lav_brand.loadAnim();
         HttpHelper.getBrandCarSelectHot(Constants.BRANDCAR_SELECT_HOT_URL, cityId, new HttpCallBack<BrandCarRessult>() {
             @Override
             public void onSuccess(BrandCarRessult result) {
@@ -154,12 +161,13 @@ public class BrandCarFragment extends BaseFragment implements Handler.Callback ,
                 if (result != null) {
                     brandCarBeans = result;
                     LogUtils.e(brandCarBeans.toString());
-                    handler.sendEmptyMessageDelayed(1,10);
+                    handler.sendEmptyMessageDelayed(1,100);
                 }
             }
 
             @Override
             public void onFail(String errMsg) {
+                lav_brand.loadfail();
                 LogUtils.e(errMsg);
             }
         });
@@ -194,4 +202,6 @@ public class BrandCarFragment extends BaseFragment implements Handler.Callback ,
     public void setOnNullBrandId() {
 
     }
+
+
 }
