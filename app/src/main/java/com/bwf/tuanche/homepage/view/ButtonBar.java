@@ -16,9 +16,11 @@ import com.bwf.tuanche.R;
  */
 public class ButtonBar extends LinearLayout implements View.OnClickListener{
     private View[] views = new View[4];
+    private View home_imag;
     private ImageView[] imageViews = new ImageView[4];
     private TextView[] textViews = new TextView[4];
     private  Integer[][] integers = new Integer[4][2];
+    private Select select;
 
     public ButtonBar(Context context) {
         this(context,null);
@@ -46,6 +48,8 @@ public class ButtonBar extends LinearLayout implements View.OnClickListener{
         for (int i = 0;i<views.length;i++){
             views[i].setOnClickListener(this);
         }
+        home_imag = view.findViewById(R.id.home_imag);
+        home_imag.setOnClickListener(this);
 
         imageViews[0] = (ImageView) view.findViewById(R.id.homePage_imag);
         imageViews[1] = (ImageView) view.findViewById(R.id.order_imag);
@@ -90,18 +94,39 @@ public class ButtonBar extends LinearLayout implements View.OnClickListener{
         switch (v.getId()){
             case R.id.homePage:
                 beSelected(0);
+                if (select!=null){
+                    select.selected(0);
+                }
             break;
             case R.id.order:
                 beSelected(1);
+                if (select!=null){
+                    select.selected(1);
+                }
                 break;
             case R.id.sever:
                 beSelected(2);
+                if (select!=null){
+                    select.selected(2);
+                }
+
                 break;
             case R.id.user:
                 beSelected(3);
+                if (select!=null){
+                    select.selected(3);
+                }
+                break;
+            case  R.id.home_imag:
+                if (select!=null){
+                    select.selected(4);
+                }
                 break;
 
         }
 
+    }
+    public interface Select{
+        void selected(int i);
     }
 }

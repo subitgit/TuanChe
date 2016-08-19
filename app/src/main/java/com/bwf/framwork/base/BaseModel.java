@@ -79,6 +79,7 @@ public abstract class BaseModel implements BaseColumns {
      * 删除数据
      */
     public void delete(String tableName, String where, String[] whereArgs) {
+        where = where+"=?";
         dbHelper.getWritableDatabase().delete(tableName, where, whereArgs);
     }
 

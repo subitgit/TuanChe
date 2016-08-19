@@ -4,19 +4,25 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/transparent"
+   >
     <LinearLayout
         android:id="@+id/homePage"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_weight="1">
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="@android:color/white">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/homePage_imag"
-            android:layout_weight="1"
             android:src="@drawable/nav_icon_home_nor"
             />
         <TextView
@@ -27,19 +33,23 @@
             android:textColor="@color/black"
             android:textSize="12sp"/>
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/order"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@android:color/white"
+        android:layout_gravity="bottom"
         android:layout_weight="1">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/order_imag"
-            android:layout_weight="1"
             android:src="@drawable/nav_icon_order_nor" />
         <TextView
             android:id="@+id/order_tv"
@@ -49,23 +59,37 @@
             android:textColor="@color/black"
             android:textSize="12sp"/>
     </LinearLayout>
-    <ImageView
+    <LinearLayout
+        android:id="@+id/home_imag"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/icon_low_price"
-        android:layout_weight="1"/>
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:background="@mipmap/icon_low_price_tottom">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/icon_low_price"
+            />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/sever"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@android:color/white"
+        android:layout_gravity="bottom"
         android:layout_weight="1">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sever_imag"
-            android:layout_weight="1"
             android:src="@drawable/nav_icon_server_nor" />
         <TextView
             android:id="@+id/sever_tv"
@@ -81,12 +105,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@android:color/white"
+        android:layout_gravity="bottom"
         android:layout_weight="1">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/user_imag"
-            android:layout_weight="1"
             android:src="@drawable/nav_icon_my_nor" />
         <TextView
             android:id="@+id/user_tv"

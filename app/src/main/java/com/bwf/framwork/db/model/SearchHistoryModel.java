@@ -60,8 +60,11 @@ public class SearchHistoryModel extends BaseModel {
     public void deleteHistory(String history){
         String[] strings = new String[1];
         strings[0] = history;
-        delete(TABLE_NAME,"history",new String[]{"宝马"});
+        delete(TABLE_NAME,"history",new String[]{history});
     }
+
+
+
 
     /**
      * 查找所有历史记录 返回List<SearchHistory>
