@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/topBrand_adImage"
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <LinearLayout
+            android:id="@+id/topBrand_lowPrice"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/topBrand_lowPrice_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/topBrand_lowPrice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="低价购车"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/topBrand_carProtec"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/topBrand_carProtect_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"  />
+            <TextView
+                android:id="@+id/topBrand_carProtect_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="汽车贴膜"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/topBrand_carSale"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/topBrand_carSale_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/topBrand_carSale_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="低价购车"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/topBrand_carSafe"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/topBrand_carSafe_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"  />
+            <TextView
+                android:id="@+id/topBrand_carSafe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保险比价"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

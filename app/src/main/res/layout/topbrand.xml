@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+
+   >
+    <TextView
+        android:id="@+id/topbrand_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="成都"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:drawableRight="@mipmap/icon_top_add_arrow"
+       android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"/>
+    <EditText
+        android:id="@+id/topbrand_search"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/topbrand_city"
+        android:drawableLeft="@mipmap/search"
+        android:hint="请输入品牌,车型"
+        android:layout_marginLeft="13dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/conner"
+        android:enabled="false"
+        />
+    <ImageView
+        android:id="@+id/topbrand_erWeima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/topbrand_search"
+        android:src="@mipmap/icon_top_icon_saomiao"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"/>
+
+</RelativeLayout>

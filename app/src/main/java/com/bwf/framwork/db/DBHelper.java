@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.bwf.framwork.Constants;
 import com.bwf.framwork.base.BaseModel;
+import com.bwf.framwork.utils.LogUtils;
 import com.bwf.tuanche.MyApplication;
 
 
@@ -30,7 +31,6 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //创建表(第一次安装app的时候onCreate才执行)
-
         // getReadableDatabase();//主要用于查询
         // write;//增，删，改
 
@@ -39,6 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 Class<BaseModel> baseModelClass = (Class<BaseModel>) Class.forName(Constants.TABLES[i]);//根据类名反射拿到Class
                 BaseModel baseModel = baseModelClass.newInstance();//根据Class拿到对象
                 db.execSQL(baseModel.getCreateTableSql());
+                LogUtils.e("创建"+Constants.TABLES[i]+"表");
 
             }
         } catch (Exception e) {

@@ -14,7 +14,7 @@ import okhttp3.Call;
  * Created by Lizhangfeng on 2016/8/16 0016.
  * Description: http回调
  */
-public abstract class HttpCallBack<T extends BaseBean> extends StringCallback {
+public abstract class HttpCallBack<T> extends StringCallback {
 
     private Class<T> tClass;
 
@@ -39,7 +39,7 @@ public abstract class HttpCallBack<T extends BaseBean> extends StringCallback {
                 BaseBean baseBean = JSON.parseObject(response, BaseBean.class);
 
                 if ("10000".equals(baseBean.code)){
-                    onSuccess(JSON.parseObject(response,tClass));
+                    onSuccess(JSON.parseObject(baseBean.result,tClass));
                 }else {
                     onFail(baseBean.msg);
                 }
