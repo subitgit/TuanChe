@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.bwf.framwork.base.BaseFragment;
+import com.bwf.framwork.utils.LogUtils;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.homepage.adapter.HotCarAdapter;
 import com.bwf.tuanche.homepage.homejson.bean.hotcar.HotCarBean;
@@ -14,7 +15,7 @@ import java.util.List;
 /**
  * Created by BWF on 2016/8/17.
  */
-public class FragmentHotCar extends BaseFragment {
+public class FragmentHotCar extends BaseFragment implements HotCarAdapter.MyClick {
     private RecyclerView  recyclerView;
     private HotCarAdapter hotCarAdapter;
     private  List<HotCarBean> list;
@@ -43,6 +44,7 @@ public class FragmentHotCar extends BaseFragment {
     protected void initData() {
     if (list!=null&&list.size()!=0){
         hotCarAdapter = new HotCarAdapter(getContext(),list);
+        hotCarAdapter.setMyClick(this);
         GridLayoutManager manager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(hotCarAdapter);
@@ -52,5 +54,10 @@ public class FragmentHotCar extends BaseFragment {
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public void myClick(int i) {
+        LogUtils.e(i+"");
     }
 }

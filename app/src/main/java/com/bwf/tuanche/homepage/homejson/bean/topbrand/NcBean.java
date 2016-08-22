@@ -4,21 +4,23 @@ package com.bwf.tuanche.homepage.homejson.bean.topbrand;
  * Created by BWF on 2016/8/16.
  */
 public class NcBean {
-    public int weight;
+    public String weight;
 
     public String name;
 
     public String pic;
 
-    public boolean show;
+    public String show;
 
-    public int type;
+    public String type;
 
-    public int modules;
+    public String modules;
 
-    public int is_ng;
+    public String is_ng;
 
-    public int is_login;
+    public String is_login;
+
+    public String url;
 
 
     @Override

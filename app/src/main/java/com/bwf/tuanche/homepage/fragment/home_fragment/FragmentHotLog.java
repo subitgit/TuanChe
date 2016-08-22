@@ -5,9 +5,11 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bwf.framwork.base.BaseFragment;
+import com.bwf.framwork.utils.LogUtils;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.homepage.homejson.bean.hotlogo.HotLogListBean;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -22,7 +24,7 @@ public class FragmentHotLog extends BaseFragment {
     private SimpleDraweeView[] logopics = new SimpleDraweeView[8];
     private TextView[] logos = new TextView[8];
     private TextView[] nums = new TextView[8];
-
+    private LinearLayout[] views = new LinearLayout[9];
 
     public void setList(List<HotLogListBean> list) {
         this.list = list;
@@ -68,6 +70,14 @@ public class FragmentHotLog extends BaseFragment {
         nums[6] = findViewByIdNoCast(R.id.hotlog_num7);
         nums[7] = findViewByIdNoCast(R.id.hotlog_num8);
 
+        int[] ints = {R.id.fragment_hot_l1,R.id.fragment_hot_l2,R.id.fragment_hot_l3,
+                R.id.fragment_hot_l4,R.id.fragment_hot_l5,R.id.fragment_hot_l6,
+                R.id.fragment_hot_l7,R.id.fragment_hot_l8,R.id.fragment_hot_l9};
+        for (int i = 0;i<views.length;i++){
+            views[i] = findViewByIdNoCast(ints[i]);
+            views[i].setOnClickListener(this);
+        }
+
     }
 
     @Override
@@ -88,6 +98,35 @@ public class FragmentHotLog extends BaseFragment {
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fragment_hot_l1:
+                LogUtils.e("点击了");
+            break;
+            case R.id.fragment_hot_l2:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l3:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l4:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l5:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l6:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l7:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l8:
+                LogUtils.e("点击了");
+                break;
+            case R.id.fragment_hot_l9:
+                LogUtils.e("点击了");
+                break;
+        }
 
     }
 }

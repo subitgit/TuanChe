@@ -5,12 +5,14 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:gravity="center">
         <ImageView
             android:id="@+id/webView_back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/icon_back"/>
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/icon_back"
+            android:layout_centerVertical="true"/>
         <TextView
             android:id="@+id/webView_title"
             android:layout_width="match_parent"
@@ -18,7 +20,7 @@
             android:text="汽车贴膜"
             android:textColor="@color/black"
             android:gravity="center"
-           android:textSize="30sp" />
+           android:textSize="20sp" />
     </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"

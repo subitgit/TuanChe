@@ -24,7 +24,7 @@
         android:layout_marginLeft="13dp"
         android:layout_centerVertical="true"
         android:background="@drawable/conner"
-        android:enabled="false"
+        android:editable="false"
         />
     <ImageView
         android:id="@+id/topbrand_erWeima"

@@ -1,6 +1,8 @@
 package com.bwf.tuanche.homepage.fragment.home_fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,6 +12,7 @@ import com.bwf.tuanche.R;
 import com.bwf.tuanche.homepage.homejson.bean.banner.BannerResultBean;
 import com.bwf.tuanche.homepage.homejson.bean.banner.CenterBannerBean;
 import com.bwf.tuanche.homepage.homejson.bean.banner.PositionBannerBean;
+import com.bwf.tuanche.homepage.ui.WebSiteViewActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -22,9 +25,11 @@ public class FragmentBanner extends BaseFragment {
     private TextView[] names = new TextView[6];
     private TextView[] discs = new TextView[6];
     private SimpleDraweeView[] imags = new SimpleDraweeView[8];
+    private View[] views = new View[6];
 
     public void setBannerResultBean(BannerResultBean bannerResultBean) {
         this.bannerResultBean = bannerResultBean;
+        LogUtils.e(bannerResultBean.toString());
         initData();
     }
 
@@ -57,7 +62,9 @@ public class FragmentBanner extends BaseFragment {
 
 
         imags[0] = findViewByIdNoCast(R.id.fragment_header1_image);
+        imags[0].setOnClickListener(this);
         imags[1] = findViewByIdNoCast(R.id.fragment_header2_image);
+        imags[1].setOnClickListener(this);
         imags[2] = findViewByIdNoCast(R.id.fragment_center1_image);
         imags[3] = findViewByIdNoCast(R.id.fragment_center2_image);
         imags[4] = findViewByIdNoCast(R.id.fragment_center3_image);
@@ -88,6 +95,36 @@ public class FragmentBanner extends BaseFragment {
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fragment_header1_image:
+                Bundle bundle = new Bundle();
+                if (bannerResultBean!=null){
+                    if (bannerResultBean.center_banner.get(0).shareTitle!=null){
+                        bundle.putString("title",bannerResultBean.center_banner.get(0).adName);
+                    }
+                    if (bannerResultBean.center_banner.get(0).shareUrl!=null){
+                        bundle.putString("url",bannerResultBean.center_banner.get(0).shareUrl);
+                    }
+                }
+                Intent intent = new Intent(getParentFragment().getActivity(), WebSiteViewActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            break;
+            case R.id.fragment_header2_image:
+                Bundle bundle2 = new Bundle();
+                if (bannerResultBean!=null){
+                    if (bannerResultBean.center_banner.get(1).shareTitle!=null){
+                        bundle2.putString("title",bannerResultBean.center_banner.get(1).adName);
+                    }
+                    if (bannerResultBean.center_banner.get(1).shareUrl!=null){
+                        bundle2.putString("url",bannerResultBean.center_banner.get(1).shareUrl);
+                    }
+                }
+                Intent intent2 = new Intent(getParentFragment().getActivity(), WebSiteViewActivity.class);
+                intent2.putExtras(bundle2);
+                startActivity(intent2);
+                break;
+        }
 
     }
 }

@@ -20,6 +20,7 @@ import java.util.List;
 public class HotCarAdapter extends RecyclerView.Adapter<HotCarAdapter.MyViewHolder> {
     private  Context context;
     private List<HotCarBean> list;
+    private MyClick myClick;
 
 
     public HotCarAdapter(Context context, List<HotCarBean> list) {
@@ -27,10 +28,14 @@ public class HotCarAdapter extends RecyclerView.Adapter<HotCarAdapter.MyViewHold
         this.list = list;
     }
 
+    public void setMyClick(MyClick myClick) {
+        this.myClick = myClick;
+    }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = View.inflate(context,R.layout.hotcar_item,null);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
+        MyViewHolder myViewHolder = new MyViewHolder(view,myClick);
         return myViewHolder;
     }
 
@@ -54,16 +59,33 @@ public class HotCarAdapter extends RecyclerView.Adapter<HotCarAdapter.MyViewHold
     }
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+
+
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public SimpleDraweeView hotcar_image;
         public TextView hotcar_name,hotcar_num,hotcar_price;
+        public MyClick myClick;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(View itemView,MyClick myClick) {
             super(itemView);
             hotcar_image = (SimpleDraweeView) itemView.findViewById(R.id.hotcar_image);
             hotcar_name = (TextView) itemView.findViewById(R.id.hotcar_name);
             hotcar_num = (TextView) itemView.findViewById(R.id.hotcar_num);
             hotcar_price = (TextView) itemView.findViewById(R.id.hotcar_price);
+            this.myClick = myClick;
+            itemView.setOnClickListener(this);
         }
+
+
+        @Override
+        public void onClick(View v) {
+            if (myClick!=null){
+                myClick.myClick(getPosition());
+            }
+        }
+    }
+
+    public interface MyClick{
+        void myClick(int i);
     }
 }

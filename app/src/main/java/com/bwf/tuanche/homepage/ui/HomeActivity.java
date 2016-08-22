@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
 import com.bwf.framwork.base.BaseActivity;
+import com.bwf.framwork.utils.LogUtils;
+import com.bwf.framwork.utils.ToastUtil;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.homepage.fragment.HomePageFragment;
 import com.bwf.tuanche.homepage.view.ButtonBar;
@@ -14,7 +16,7 @@ import com.bwf.tuanche.homepage.view.ButtonBar;
  */
 public class HomeActivity extends BaseActivity implements ButtonBar.Select {
     private HomePageFragment homePage;
-    private Fragment[] fragments = new Fragment[4];
+    private Fragment[] fragments = new Fragment[1];
     private FragmentTransaction transaction;
     private ButtonBar buttonBar;
     private String cityId;
@@ -30,15 +32,16 @@ public class HomeActivity extends BaseActivity implements ButtonBar.Select {
 
     @Override
     public void initView() {
-       // homePage = (HomePageFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_homePager);
-       // fragments[0] = homePage;
+        homePage = (HomePageFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_homePager);
+        fragments[0] = homePage;
         buttonBar = findViewByIdNoCast(R.id.buttonBar);
+        buttonBar.setSelect(this);
     }
 
     @Override
     public void initData() {
-      //  hideAll();
-       // showFragment(0);
+      /*  hideAll();
+        showFragment(0);*/
     }
 
     public void hideAll(){
@@ -65,11 +68,12 @@ public class HomeActivity extends BaseActivity implements ButtonBar.Select {
     public void selected(int i) {
         switch (i){
             case 0:
-                hideAll();
-                showFragment(0);
+                ToastUtil.showToast("点击了首页");
+               /* hideAll();
+                showFragment(0);*/
             break;
             case 1:
-
+                LogUtils.e("点击了订单");
                 break;
             case 2:
 

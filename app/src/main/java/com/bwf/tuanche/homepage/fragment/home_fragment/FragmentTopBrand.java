@@ -1,15 +1,18 @@
 package com.bwf.tuanche.homepage.fragment.home_fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bwf.framwork.base.BaseFragment;
 import com.bwf.framwork.image.ImageLoader;
+import com.bwf.framwork.utils.LogUtils;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.homepage.homejson.bean.banner.HeaderBannerBean;
 import com.bwf.tuanche.homepage.homejson.bean.topbrand.NcBean;
+import com.bwf.tuanche.homepage.ui.WebSiteViewActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -51,6 +54,7 @@ public class FragmentTopBrand extends BaseFragment {
     @Override
     protected void initView(View rootView) {
         topBrand_adImage = findViewByIdNoCast(R.id.topBrand_adImage);
+        topBrand_adImage.setOnClickListener(this);
         simpleDraweeViews[0] = findViewByIdNoCast(R.id.topBrand_lowPrice_image);
         simpleDraweeViews[1] = findViewByIdNoCast(R.id.topBrand_carProtect_image);
         simpleDraweeViews[2] = findViewByIdNoCast(R.id.topBrand_carSale_image);
@@ -75,6 +79,7 @@ public class FragmentTopBrand extends BaseFragment {
     @Override
     protected void initData() {
         if (nc!=null&&nc.size()!=0){
+            LogUtils.e(nc.toString());
             for (int i = 0;i<simpleDraweeViews.length;i++){
                 simpleDraweeViews[i].setImageURI(nc.get(i).pic);
                 textViews[i].setText(nc.get(i).name);
@@ -90,11 +95,37 @@ public class FragmentTopBrand extends BaseFragment {
             case R.id.topBrand_lowPrice:
             break;
             case R.id.topBrand_carProtec:
-
+                Bundle bundle = new Bundle();
+                if (nc!=null&&nc.size()!=0){
+                    if (nc.get(1).name!=null){
+                        bundle.putString("title",nc.get(1).name);
+                    }
+                    if (nc.get(1).url!=null){
+                        bundle.putString("url",nc.get(1).url);
+                    }
+                }
+            Intent intent = new Intent(getParentFragment().getActivity(), WebSiteViewActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             break;
             case R.id.topBrand_carSale:
             break;
             case R.id.topBrand_carSafe:
+                Bundle sbundle = new Bundle();
+                if (nc!=null&&nc.size()!=0){
+                    if (nc.get(3).name!=null){
+                        sbundle.putString("title",nc.get(3).name);
+                    }
+                    if (nc.get(3).url!=null){
+                        sbundle.putString("url",nc.get(3).url);
+                    }
+                }
+                Intent sintent = new Intent(getParentFragment().getActivity(), WebSiteViewActivity.class);
+                sintent.putExtras(sbundle);
+                startActivity(sintent);
+            break;
+            case R.id.topBrand_adImage:
+
             break;
         }
 
