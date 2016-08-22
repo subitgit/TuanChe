@@ -1,4 +1,5 @@
 package com.bwf.tuanche.search.ui;
+import android.content.Intent;
 import android.support.v7.view.menu.ExpandedMenuView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +23,7 @@ import com.bwf.framwork.http.HttpHelper;
 import com.bwf.framwork.utils.LogUtils;
 import com.bwf.framwork.utils.ToastUtil;
 import com.bwf.tuanche.R;
+import com.bwf.tuanche.homepage.ui.HomeActivity;
 import com.bwf.tuanche.search.adapter.HotSearchAdapter;
 import com.bwf.tuanche.search.adapter.SearchHistoryAdapter;
 
@@ -69,6 +71,7 @@ public class SearchActivity extends BaseActivity {
     @Override
     public void initView() {
         search_back = findViewByIdNoCast(R.id.search_back);
+        search_back.setOnClickListener(this);
         search_etv = findViewByIdNoCast(R.id.search_etv);
         search_tv = findViewByIdNoCast(R.id.search_tv);
         search_tv.setOnClickListener(this);
@@ -167,6 +170,11 @@ public class SearchActivity extends BaseActivity {
                    ToastUtil.showToast("搜索内容不能为空");
                 }
             break;
+            case R.id.search_back:
+                Intent intent = new Intent(SearchActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+                break;
         }
 
     }

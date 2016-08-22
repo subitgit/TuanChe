@@ -35,6 +35,11 @@ public class ButtonBar extends LinearLayout implements View.OnClickListener{
         init(context);
     }
 
+
+    public void setSelect(Select select) {
+        this.select = select;
+    }
+
     public void init(Context context){
         View view = View.inflate(context, R.layout.button_bar,null);
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -69,7 +74,7 @@ public class ButtonBar extends LinearLayout implements View.OnClickListener{
         integers[2][1] = R.drawable.nav_icon_server_sel;
         integers[3][0] = R.drawable.nav_icon_my_nor;
         integers[3][1] = R.drawable.nav_icon_my_sel;
-
+        beSelected(0);
     }
 
     public void reSet(){

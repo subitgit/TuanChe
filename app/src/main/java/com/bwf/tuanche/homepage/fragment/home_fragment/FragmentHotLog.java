@@ -1,4 +1,4 @@
-package com.bwf.tuanche.homepage.fragment;
+package com.bwf.tuanche.homepage.fragment.home_fragment;
 
 import android.graphics.Color;
 import android.text.SpannableStringBuilder;

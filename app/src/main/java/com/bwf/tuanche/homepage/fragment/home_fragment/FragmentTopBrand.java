@@ -1,5 +1,6 @@
-package com.bwf.tuanche.homepage.fragment;
+package com.bwf.tuanche.homepage.fragment.home_fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -89,6 +90,7 @@ public class FragmentTopBrand extends BaseFragment {
             case R.id.topBrand_lowPrice:
             break;
             case R.id.topBrand_carProtec:
+
             break;
             case R.id.topBrand_carSale:
             break;

@@ -1,43 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/topbrand"
-        android:id="@+id/myTop"/>
-    <ScrollView
+   <fragment
+        android:id="@+id/fragment_homePager"
+        android:name="com.bwf.tuanche.homepage.fragment.HomePageFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/myTop">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <fragment
-                android:id="@+id/fragment_top"
-                android:name="com.bwf.tuanche.homepage.fragment.FragmentTopBrand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <fragment
-                android:id="@+id/fragment_log"
-                android:name="com.bwf.tuanche.homepage.fragment.FragmentHotLog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <fragment
-                android:id="@+id/fragment_banner"
-                android:name="com.bwf.tuanche.homepage.fragment.FragmentBanner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <fragment
-                android:id="@+id/fragment_hotcar"
-                android:name="com.bwf.tuanche.homepage.fragment.FragmentHotCar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="wrap_content"/>
     <com.bwf.tuanche.homepage.view.ButtonBar
+        android:id="@+id/buttonBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
