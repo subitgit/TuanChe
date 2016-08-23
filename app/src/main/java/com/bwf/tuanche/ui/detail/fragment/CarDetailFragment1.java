@@ -21,8 +21,13 @@ import com.facebook.drawee.view.SimpleDraweeView;
 public class CarDetailFragment1 extends BaseFragment{
 
     private SimpleDraweeView simpleDraweeView;
-    private TextView tv_partake,tv_save_up_money,tv_partake_string,tv_save_up_string,tv_Date,tv_location,tv_notice,tv_about_price;
+    private TextView tv_partake,tv_save_up_money,tv_partake_string,tv_save_up_string,tv_Date,tv_location,
+            tv_notice,tv_about_price,tv_groupbuy;
     private RelativeLayout rl_price;
+
+    public TextView getTv_groupbuy() {
+        return tv_groupbuy;
+    }
     @Override
     protected int getResource() {
         return R.layout.car_detail_fragment1;
@@ -45,6 +50,7 @@ public class CarDetailFragment1 extends BaseFragment{
         tv_notice = findViewByIdNoCast(R.id.tv_notice);
         rl_price = findViewByIdNoCast(R.id.rl_price);
         tv_about_price = findViewByIdNoCast(R.id.tv_about_price);
+        tv_groupbuy = findViewByIdNoCast(R.id.tv_groupbuy);
 
     }
 

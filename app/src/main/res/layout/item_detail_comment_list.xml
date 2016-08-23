@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    android:paddingRight="10dp">
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/renzhenpingjia"
+            android:visibility="gone" />
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/simpleDraweeView"
@@ -18,63 +27,78 @@
             android:layout_height="50dp"
             fresco:placeholderImage="@mipmap/default_round"
             fresco:placeholderImageScaleType="centerCrop"
-            fresco:roundAsCircle="true"
-            />
+            fresco:roundAsCircle="true" />
 
         <RelativeLayout
-            android:layout_toRightOf="@id/simpleDraweeView"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_height="wrap_content">
+            android:layout_toRightOf="@id/simpleDraweeView">
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
-                android:textSize="14sp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/color_title_pressed"
-                android:layout_height="wrap_content" />
+                android:textSize="14sp" />
 
             <RatingBar
                 android:id="@+id/ratingBar_score"
                 style="@style/RadingStyle_Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_name"
+                android:layout_below="@id/tv_name"
+                android:layout_marginTop="4dp"
                 android:numStars="5"
                 android:rating="4.6"
-                android:stepSize="0.1"
-                android:layout_below="@id/tv_name"
-                android:layout_alignLeft="@id/tv_name"
-                android:layout_marginTop="4dp"
-                />
+                android:stepSize="0.1" />
 
 
             <TextView
+                android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_date"
-                android:textSize="12sp"
+                android:layout_alignTop="@id/ratingBar_score"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/color_title_pressed"
                 android:layout_toRightOf="@id/ratingBar_score"
-                android:layout_alignTop="@id/ratingBar_score"/>
+                android:textColor="@color/color_title_pressed"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
 
     </RelativeLayout>
-    <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="14sp"
-        android:textColor="@color/color_tv_deeper_gray"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:textColor="@color/color_tv_deeper_gray"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_fold"
+            android:src="@mipmap/icon_grey_arrow_down"
+            android:layout_width="wrap_content"
+            android:visibility="invisible"
+            android:layout_below="@id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
 
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/color_title_divider" />
 
 

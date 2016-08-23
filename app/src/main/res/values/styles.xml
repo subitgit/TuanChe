@@ -29,4 +29,22 @@
 
     <style name="Theme.UMDefault" parent="android:style/Theme.NoTitleBar"></style>
 
+    <!--评分textview Style-->
+    <style name="RatingText_Style" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/color_tv_orange</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+    <!--textview Style-->
+    <style name="Text_Style" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/color_title_pressed</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
 </resources>

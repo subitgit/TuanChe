@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,7 @@
     tools:context="com.bwf.tuanche.ui.detail.CarDetailActivity">
 
     <RelativeLayout
+        android:id="@+id/rl_title"
         android:layout_width="match_parent"
         android:background="@color/color_title_bg"
         android:layout_height="@dimen/title_height">
@@ -60,7 +61,9 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <ScrollView
+    <com.bwf.tuanche.view.CustomScrollView
+        android:layout_below="@id/rl_title"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -81,19 +84,46 @@
                 android:name="com.bwf.tuanche.ui.detail.fragment.CarDetailFragment3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/color_title_divider_large"/>
 
             <fragment
                 android:id="@+id/fragment2"
                 android:name="com.bwf.tuanche.ui.detail.fragment.CarDetailFragment2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/color_title_divider_large"/>
+
+            <fragment
+                android:id="@+id/fragment4"
+                android:name="com.bwf.tuanche.ui.detail.fragment.CarDetailFragment4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
 
         </LinearLayout>
+    </com.bwf.tuanche.view.CustomScrollView>
 
+    <TextView
+        android:id="@+id/tv_groupbuy_froat"
+        android:layout_width="match_parent"
+        android:text="团购报名"
+        android:textColor="@color/color_white"
+        android:layout_alignParentBottom="true"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/selector_groupbuy_tv_bg"
+        android:layout_height="wrap_content"
+        android:clickable="true"/>
 
-    </ScrollView>
-
-
-
-</LinearLayout>
+</RelativeLayout>

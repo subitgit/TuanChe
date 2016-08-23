@@ -2,10 +2,8 @@ package com.bwf.tuanche.ui.detail.fragment;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bwf.framwork.base.BaseFragment;
 import com.bwf.framwork.utils.IntentUtils;

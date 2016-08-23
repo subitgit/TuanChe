@@ -14,5 +14,11 @@ public class UrlUtils {
     /**所有评论**/
     public static final String ALL_COMMENT_URL = BASE_URL + "/bwf_TuanChe_BuyInfoEvaluateServlet";
 
+    /**常见问题**/
+    public static final String CAR_DETAIL_QUSTION_URL = BASE_URL + "/bwf_TuanChe_BuyInfoQuestionServlet";
+
+    /**购车流程**/
+    public static final String CAR_DETAIL_FLOW_URL = BASE_URL + "/bwf_TuanChe_BuyInfoNogroupServlet";
+
 
 }
