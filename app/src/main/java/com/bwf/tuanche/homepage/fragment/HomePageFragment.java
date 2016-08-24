@@ -1,9 +1,10 @@
 package com.bwf.tuanche.homepage.fragment;
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.bwf.framwork.base.BaseFragment;
 import com.bwf.framwork.http.HttpArrayCallBack;
@@ -18,9 +19,7 @@ import com.bwf.tuanche.homepage.homejson.bean.banner.BannerResultBean;
 import com.bwf.tuanche.homepage.homejson.bean.hotcar.HotCarBean;
 import com.bwf.tuanche.homepage.homejson.bean.hotlogo.HotLogoResultBean;
 import com.bwf.tuanche.homepage.homejson.bean.topbrand.ResultBean;
-import com.bwf.tuanche.homepage.ui.HomeActivity;
 import com.bwf.tuanche.search.ui.SearchActivity;
-
 import java.util.List;
 
 /**
@@ -28,11 +27,14 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment {
     private String cityId;
+    private ImageView topbrand_erWeima;
     private FragmentTopBrand fragmentTopBrand;
     private FragmentHotLog fragmentHotLog;
     private FragmentBanner fragmentBanner;
     private FragmentHotCar fragmentHotCar;
     private EditText topbrand_search;
+    private static final String DECODED_CONTENT_KEY = "codedContent";
+    private static final String DECODED_BITMAP_KEY = "codedBitmap";
 
     public void setCityId(String cityId) {
         this.cityId = cityId;
@@ -57,6 +59,8 @@ public class HomePageFragment extends BaseFragment {
         fragmentHotCar = (FragmentHotCar) getChildFragmentManager().findFragmentById(R.id.fragment_hotcar);
         topbrand_search = findViewByIdNoCast(R.id.topbrand_search);
         topbrand_search.setOnClickListener(this);
+        topbrand_erWeima = findViewByIdNoCast(R.id.topbrand_erWeima);
+        topbrand_erWeima.setOnClickListener(this);
     }
 
 
@@ -130,7 +134,9 @@ public class HomePageFragment extends BaseFragment {
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intent);
             break;
-        }
+            case R.id.topbrand_erWeima:
 
+            break;
+        }
     }
 }

@@ -73,13 +73,13 @@ public class HomeActivity extends BaseActivity implements ButtonBar.Select {
                 showFragment(0);*/
             break;
             case 1:
-                LogUtils.e("点击了订单");
+                ToastUtil.showToast("点击了订单");
                 break;
             case 2:
-
+                ToastUtil.showToast("点击了客服");
                 break;
             case 3:
-
+                ToastUtil.showToast("点击了自己");
                 break;
             case 4:
 

@@ -27,7 +27,7 @@ public class FragmentTopBrand extends BaseFragment {
     private  SimpleDraweeView[] simpleDraweeViews = new  SimpleDraweeView[4];
     private TextView[] textViews = new TextView[4];
     private LinearLayout topBrand_carSafe,topBrand_carSale,topBrand_carProtec,topBrand_lowPrice;
-    private ImageLoader imageLoader;
+
 
     public void setNc(List<NcBean> nc) {
         this.nc = nc;

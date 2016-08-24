@@ -67,8 +67,6 @@ public class MarriageActivity extends BaseActivity implements ListViewPlus.ListV
                   marriage_lv.setAdapter(adapte);
                   marriage_lv.setListViewPlusListener(MarriageActivity.this);
               }
-
-
           }
 
           @Override
