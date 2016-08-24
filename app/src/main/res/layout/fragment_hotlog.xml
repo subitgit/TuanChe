@@ -40,7 +40,6 @@
                 android:id="@+id/hotlog_num1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -66,7 +65,6 @@
                 android:id="@+id/hotlog_num2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -92,7 +90,6 @@
                 android:id="@+id/hotlog_num3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -118,7 +115,6 @@
                 android:id="@+id/hotlog_num4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -144,7 +140,6 @@
                 android:id="@+id/hotlog_num5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -170,7 +165,6 @@
                 android:id="@+id/hotlog_num6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -196,7 +190,6 @@
                 android:id="@+id/hotlog_num7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
@@ -222,7 +215,6 @@
                 android:id="@+id/hotlog_num8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hotlog_num"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>

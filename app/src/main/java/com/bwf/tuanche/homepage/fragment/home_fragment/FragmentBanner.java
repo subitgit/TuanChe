@@ -12,6 +12,7 @@ import com.bwf.tuanche.R;
 import com.bwf.tuanche.homepage.homejson.bean.banner.BannerResultBean;
 import com.bwf.tuanche.homepage.homejson.bean.banner.CenterBannerBean;
 import com.bwf.tuanche.homepage.homejson.bean.banner.PositionBannerBean;
+import com.bwf.tuanche.homepage.ui.MarriageActivity;
 import com.bwf.tuanche.homepage.ui.WebSiteViewActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -72,6 +73,8 @@ public class FragmentBanner extends BaseFragment {
         imags[6] = findViewByIdNoCast(R.id.fragment_position2_image);
         imags[7] = findViewByIdNoCast(R.id.fragment_position3_image);
 
+        views[0] = findViewByIdNoCast(R.id.fragment_center1);
+        views[0].setOnClickListener(this);
 
 
 
@@ -124,6 +127,10 @@ public class FragmentBanner extends BaseFragment {
                 intent2.putExtras(bundle2);
                 startActivity(intent2);
                 break;
+            case R.id.fragment_center1:
+                Intent intent1 =new Intent(getParentFragment().getActivity(), MarriageActivity.class);
+                startActivity(intent1);
+            break;
         }
 
     }

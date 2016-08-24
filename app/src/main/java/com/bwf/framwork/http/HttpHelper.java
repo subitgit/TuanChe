@@ -98,6 +98,19 @@ public class HttpHelper {
                 .execute(callBack);
     }
 
+    /**
+     * 获取婚姻座驾详情
+     * @param callBack
+     */
+
+    public static void getMarriageCar(HttpCallBack callBack){
+        OkHttpUtils
+                .post()
+                .url( "http://123.56.145.151:8080/TuanCheNetWork/bwf_TuanChe_AdplistServlet")
+                .build()
+                .execute(callBack);
+    }
+
 
 
 }

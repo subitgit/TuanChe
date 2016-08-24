@@ -175,6 +175,10 @@ public class SearchActivity extends BaseActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.search_delete:
+                search_etv.setText("");
+                 break;
+
         }
 
     }
