@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_sy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/item_CityFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="15dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:background="#F3F3F3"
+        android:visibility="gone"
+        android:text="A" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DFDFDF"/>
+    <TextView
+        android:id="@+id/item_CityName"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="15dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/white"
+        android:paddingLeft="15dp"
+        android:text="名字" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DFDFDF"/>
+
+</LinearLayout>

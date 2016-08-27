@@ -15,7 +15,7 @@ public abstract class BaseListAdpter<T, VH extends BaseListAdpter.ViewHolder> ex
 
     private List<T> tList;
 
-    private Context context;
+    public Context context;
 
     private View rootView;
 
