@@ -5,7 +5,6 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.uuzuche.lib_zxing.DisplayUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -28,7 +27,7 @@ public class MyApplication extends Application {
         Fresco.initialize(this);
         //初始化okhttp
         initOkhttp();
-        initDisplayOpinion();
+        //initDisplayOpinion();
     }
 
     /**
@@ -52,7 +51,7 @@ public class MyApplication extends Application {
         return myApplication.getApplicationContext();
     }
 
-    private void initDisplayOpinion() {
+   /* private void initDisplayOpinion() {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         DisplayUtil.density = dm.density;
         DisplayUtil.densityDPI = dm.densityDpi;
@@ -60,5 +59,5 @@ public class MyApplication extends Application {
         DisplayUtil.screenhightPx = dm.heightPixels;
         DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
         DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
-    }
+    }*/
 }

@@ -1,11 +1,9 @@
 package com.bwf.tuanche.homepage.fragment;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.bwf.framwork.base.BaseFragment;
 import com.bwf.framwork.http.HttpArrayCallBack;
 import com.bwf.framwork.http.HttpCallBack;
@@ -20,6 +18,7 @@ import com.bwf.tuanche.homepage.homejson.bean.hotcar.HotCarBean;
 import com.bwf.tuanche.homepage.homejson.bean.hotlogo.HotLogoResultBean;
 import com.bwf.tuanche.homepage.homejson.bean.topbrand.ResultBean;
 import com.bwf.tuanche.search.ui.SearchActivity;
+
 import java.util.List;
 
 /**
@@ -139,4 +138,6 @@ public class HomePageFragment extends BaseFragment {
             break;
         }
     }
+
+
 }
