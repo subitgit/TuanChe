@@ -17,7 +17,6 @@ import okhttp3.Call;
  */
 public abstract class HttpCallBack<T> extends StringCallback {
 
-
     private Class<T> tClass;
 
     public HttpCallBack() {
@@ -33,30 +32,24 @@ public abstract class HttpCallBack<T> extends StringCallback {
     @Override
     public void onResponse(String response, int id) {
 
-        if (StringUtils.isNotEmpty(response)) {
+        if (StringUtils.isNotEmpty(response)){
 
-            LogUtils.e("服务器返回结果: " + response);
-
-            try {
+            try{
 
                 BaseBean baseBean = JSON.parseObject(response, BaseBean.class);
 
-                if ("10000".equals(baseBean.code)) {
-
-                    if (StringUtils.isNotEmpty(baseBean.result))
-                        onSuccess(JSON.parseObject(baseBean.result, tClass));
-                    else
-                        onFail("result is empty");
-
-                } else {
+                if ("10000".equals(baseBean.code)){
+                    onSuccess(JSON.parseObject(baseBean.result,tClass));
+                }else {
                     onFail(baseBean.msg);
                 }
-            } catch (JSONException e) {
+            }catch (JSONException e){
                 onFail("解析异常");
             }
 
 
-        } else
+
+        }else
             onFail("服务器返回内容为空");
 
     }
@@ -64,5 +57,6 @@ public abstract class HttpCallBack<T> extends StringCallback {
     public abstract void onSuccess(T result);
 
     public abstract void onFail(String errMsg);
+
 
 }

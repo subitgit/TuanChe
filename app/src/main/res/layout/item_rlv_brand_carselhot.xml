@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_rlv_brand_carselhot"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_brandcar_selhotcon"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        fresco:actualImageScaleType="fitCenter"
+        fresco:placeholderImage="@mipmap/default_list_logo"
+        fresco:placeholderImageScaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_brandcar_selhotcon"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="@dimen/lable25" />
+</LinearLayout>

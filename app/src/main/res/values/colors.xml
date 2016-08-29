@@ -22,5 +22,17 @@
     <!--背景颜色-->
     <color name="color_tv_groupbuy_default">#fffd7574</color>
     <color name="translucent_gray" >#77222222</color>
+=======
+
+    <color name="red">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="halftrans">#7f000000</color>
+    <color name="simple_black">#ACB0B5</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#007fff</color>
+    <color name="gray">#A9A9A9</color>
+    <color name="lightred">#F08080</color>
+    <color name="screencolor">#EEEEEE</color>
+>>>>>>> ed193deb3d8f84ba1324c7e499977bbd46c8d45e
 
 </resources>

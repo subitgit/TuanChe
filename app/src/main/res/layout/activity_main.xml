@@ -10,16 +10,11 @@
     tools:context="com.bwf.tuanche.MainActivity">
 
 
-    <ListView
-        android:id="@+id/lv_test"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="30dp"
+       android:id="@+id/btn"/>
 
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
 
 </RelativeLayout>

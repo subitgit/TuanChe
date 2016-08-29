@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bwf.framwork.base.BaseActivity;
 import com.bwf.framwork.http.HttpCallBack;
 import com.bwf.framwork.http.HttpHelper;
+import com.bwf.tuanche.MyApplication;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.entity.detail.CarDetailResponseBean;
 import com.bwf.tuanche.ui.detail.fragment.CarDetailFragment1;
@@ -39,12 +40,14 @@ public class CarDetailActivity extends BaseActivity implements CustomScrollView.
         return R.layout.activity_car_detail;
     }
 
-    private String cityId, brandId, styleId,cityName;
+    private String cityId="156", brandId, styleId,cityName;
 
     @Override
     public void beforeInitView() {
+
         cityName = getIntent().getStringExtra("cityName");
-        cityId = getIntent().getStringExtra("cityId");
+       // cityId = getIntent().getStringExtra("cityId");
+//        cityId= MyApplication.getAppContext().getCityId();
         brandId = getIntent().getStringExtra("brandId");
         styleId = getIntent().getStringExtra("styleId");
 
@@ -120,13 +123,13 @@ public class CarDetailActivity extends BaseActivity implements CustomScrollView.
 
     private void getDatas() {
 
-        HttpHelper.getDetail(this,"156", "31", "166", new HttpCallBack<CarDetailResponseBean>() {
+        HttpHelper.getDetail(this,cityId, brandId, styleId, new HttpCallBack<CarDetailResponseBean>() {
             @Override
             public void onSuccess(CarDetailResponseBean result) {
                 if (result != null) {
                     tv_name.setText(result.styleName + "-");
                     fragment1.setDatas(result);
-                    fragment2.setDatas(result, "156", "31");
+                    fragment2.setDatas(result, cityId, brandId);
                     fragment3.setDatas(result);
 
                 }
