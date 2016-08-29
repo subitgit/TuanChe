@@ -45,19 +45,19 @@ public class HttpHelper {
     }
 
 
-    public static void getBrandCarSelect(String url,String cityId,HttpArrayCallBack callBack){
-        OkHttpUtils
-                .post()
-                .addParams("cityId",cityId+"")
-                .url(url)
-                .build()
-                .execute(callBack);
-    }
     public static void getBrandCarSelectHot(String url,String cityId,HttpCallBack callBack){
         OkHttpUtils
                 .post()
                 .addParams("cityId",cityId)
                 .addParams("isBuy","2")
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getBrandCarSelect(String url,String cityId,HttpArrayCallBack callBack){
+        OkHttpUtils
+                .post()
+                .addParams("cityId",cityId+"")
                 .url(url)
                 .build()
                 .execute(callBack);
@@ -78,7 +78,6 @@ public class HttpHelper {
                 .url(url)
                 .build()
                 .execute(callBack);
-
     }
 
 }

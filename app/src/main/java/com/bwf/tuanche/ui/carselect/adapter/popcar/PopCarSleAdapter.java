@@ -10,16 +10,14 @@ import android.widget.TextView;
 import com.bwf.framwork.base.BaseListAdpter;
 import com.bwf.framwork.image.ImageLoader;
 import com.bwf.framwork.utils.IntentUtils;
-import com.bwf.framwork.utils.LogUtils;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.ui.carselect.bean.brand.PopSelCarBean;
 import com.bwf.tuanche.ui.detail.CarDetailActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
 
 /**
  * Created by Suzaku_Zhang YongCan on 2016/8/18.
@@ -89,6 +87,7 @@ public class PopCarSleAdapter extends BaseListAdpter<PopSelCarBean, PopCarSleAda
                 if (styleId!=null)
                     bundle.putString("styleId",styleId);
                 IntentUtils.openActivity(context, CarDetailActivity.class, bundle);
+               // IntentUtils.openActivity(context, CarDetailActivity.class, bundle);
             }
         });
 

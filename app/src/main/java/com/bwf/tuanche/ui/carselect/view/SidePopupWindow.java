@@ -102,6 +102,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
                     tv_pupwin_carsle_hot.setTextColor(Color.parseColor("#FF4081"));
                     tv_pupwin_carsle_price.setTextColor(Color.parseColor("#000000"));
 //                    tv_pupwin_carsle_hot.setBackground(context.getDrawable(R.drawable.base_tabpager_indicator_selected));
+                    tv_pupwin_carsle_hot.setBackground(context.getDrawable(base_tabpager_indicator_selected));
                     tv_pupwin_carsle_price.setBackgroundColor(Color.parseColor("#EEEEEE"));
                     getData();
                 }
@@ -114,6 +115,7 @@ public class SidePopupWindow extends PopupWindow implements View.OnClickListener
                     tv_pupwin_carsle_price.setTextColor(Color.parseColor("#FF4081"));
                     tv_pupwin_carsle_hot.setBackgroundColor(Color.parseColor("#EEEEEE"));
 //                    tv_pupwin_carsle_price.setBackground(context.getDrawable(R.drawable.base_tabpager_indicator_selected));
+                    tv_pupwin_carsle_price.setBackground(context.getDrawable(base_tabpager_indicator_selected));
 
                     priceAdapter.settList(carBeans);
                     priceAdapter.notifyDataSetChanged();
