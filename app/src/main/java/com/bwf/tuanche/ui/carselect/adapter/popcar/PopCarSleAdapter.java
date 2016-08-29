@@ -1,6 +1,7 @@
 package com.bwf.tuanche.ui.carselect.adapter.popcar;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.bwf.framwork.base.BaseListAdpter;
 import com.bwf.framwork.image.ImageLoader;
+import com.bwf.framwork.utils.IntentUtils;
 import com.bwf.framwork.utils.LogUtils;
 import com.bwf.tuanche.R;
 import com.bwf.tuanche.ui.carselect.bean.brand.PopSelCarBean;
@@ -24,12 +26,15 @@ import java.util.Map;
  */
 public class PopCarSleAdapter extends BaseListAdpter<PopSelCarBean, PopCarSleAdapter.ViewHolder> {
     private ImageLoader imageLoader;
-    private Map<String ,Integer> convertNames;
+    private Map<String, Integer> convertNames;
+    private Context context;
+
     public PopCarSleAdapter(Context context) {
         super(context);
+        this.context = context;
         imageLoader = ImageLoader.getInstance();
         convertNames = new HashMap<>();
-        convertNames.put("",-1);
+        convertNames.put("", -1);
     }
 
     @Override
@@ -49,23 +54,23 @@ public class PopCarSleAdapter extends BaseListAdpter<PopSelCarBean, PopCarSleAda
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, PopSelCarBean popSelCarBean, int position) {
+    public void onBindViewHolder(ViewHolder holder, final PopSelCarBean popSelCarBean, int position) {
         if (popSelCarBean == null)
             return;
         holder.tv_pop_carsel_lable.setVisibility(View.GONE);
-        String brandName = popSelCarBean.brandName.replace("-","").replace(" ","");
+        String brandName = popSelCarBean.brandName.replace("-", "").replace(" ", "");
         boolean flag = true;
-        for (Map.Entry<String,Integer> entry:convertNames.entrySet()) {
-            if (entry.getKey().equals(brandName)&&entry.getValue()!=position) {
-                flag=false;
+        for (Map.Entry<String, Integer> entry : convertNames.entrySet()) {
+            if (entry.getKey().equals(brandName) && entry.getValue() != position) {
+                flag = false;
             }
-            if (entry.getKey().equals(brandName)&&entry.getValue()==position){
+            if (entry.getKey().equals(brandName) && entry.getValue() == position) {
                 holder.tv_pop_carsel_lable.setText(brandName);
                 holder.tv_pop_carsel_lable.setVisibility(View.VISIBLE);
             }
         }
         if (flag)
-            convertNames.put(brandName,position);
+            convertNames.put(brandName, position);
         if (popSelCarBean.styleName != null)
             holder.tv_pop_carsel_name.setText(popSelCarBean.styleName);
         if (popSelCarBean.basePrice != null && popSelCarBean.price != null)
@@ -75,7 +80,14 @@ public class PopCarSleAdapter extends BaseListAdpter<PopSelCarBean, PopCarSleAda
         holder.ll_pop_carsel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Bundle bundle = new Bundle();
+                String brandId = popSelCarBean.brandId;
+                String  styleId=popSelCarBean.id;
+                if (brandId!=null)
+                    bundle.putString("brandId",brandId);
+                if (styleId!=null)
+                    bundle.putString("styleId",styleId);
+               // IntentUtils.openActivity(context, CarDetailActivity.class, bundle);
             }
         });
 

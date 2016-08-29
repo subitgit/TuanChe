@@ -2,35 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:orientation="horizontal"
-=======
     android:gravity="center"
->>>>>>> suzaku
+    android:orientation="horizontal"
     tools:context="com.bwf.tuanche.ui.carselect.fragment.BrandCarFragment">
 
     <com.bwf.tuanche.ui.carselect.view.LoadAnimView
         android:id="@+id/lav_brand"
-        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
 
     <ScrollView
-        android:layout_centerInParent="true"
         android:id="@+id/sl_brandcar_select"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
         <LinearLayout
             android:id="@+id/ll_brandcar_select"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-           />
+            android:orientation="vertical" />
     </ScrollView>
-<<<<<<< HEAD
-    
-</LinearLayout>
-=======
+
 </RelativeLayout>
->>>>>>> suzaku

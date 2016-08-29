@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn:
-                IntentUtils.openActivity(this, CarSelectMainActivity.class);
+               // IntentUtils.openActivity(this, CarSelectMainActivity.class);
                 break;
         }
     }
