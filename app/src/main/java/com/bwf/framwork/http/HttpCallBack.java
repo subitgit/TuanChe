@@ -17,6 +17,7 @@ import okhttp3.Call;
  */
 public abstract class HttpCallBack<T> extends StringCallback {
 
+
     private Class<T> tClass;
 
     public HttpCallBack() {

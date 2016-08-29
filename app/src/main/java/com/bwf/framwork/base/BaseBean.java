@@ -12,12 +12,4 @@ public class BaseBean{
 
     public String result;//数据结果
 
-    @Override
-    public String toString() {
-        return "BaseBean{" +
-                "code='" + code + '\'' +
-                ", msg='" + msg + '\'' +
-                ", result='" + result + '\'' +
-                '}';
-    }
 }

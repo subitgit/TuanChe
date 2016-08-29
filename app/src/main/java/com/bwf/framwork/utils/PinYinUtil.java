@@ -10,7 +10,9 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
  * Created by caozhiguo on 2016/8/18.
  * Description:拼音帮助类
  */
+
 public class PinYinUtil {
+
     /**
      * 获取第一个字符的首字母
      *
@@ -32,18 +34,20 @@ public class PinYinUtil {
         char name = nameChar[0];
 
         if (name > 96 && name <= 122) {//a-z的字母
-            pinyinName = "" + name;
-        } else if (name > 128) {
-            try {
-                pinyinName += PinyinHelper.toHanyuPinyinStringArray(name, defaultFormat)[0].charAt(0);
-            } catch (Exception e) {
+            if (name > 96 && name < 122) {//a-z的字母
+                pinyinName = "" + name;
+            } else if (name > 128) {
+                try {
+                    pinyinName += PinyinHelper.toHanyuPinyinStringArray(name, defaultFormat)[0].charAt(0);
+                } catch (Exception e) {
+                    pinyinName = "#";
+                    e.printStackTrace();
+                }
+            } else {
                 pinyinName = "#";
-                e.printStackTrace();
             }
-        } else {
-            pinyinName = "#";
         }
-
         return pinyinName;
     }
 }
+

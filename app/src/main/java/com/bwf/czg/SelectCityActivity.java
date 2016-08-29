@@ -137,7 +137,7 @@ public class SelectCityActivity extends BaseActivity {
                 String name = openCitys.get(position).name;//
                 String city_Id = openCitys.get(position).id;//当前点击城市的id
                 tv_selectCity.setText("当前城市-" + name);
-                Toast.makeText(SelectCityActivity.this, "选中了 = " + name + "id = " + city_Id, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "选中了 = " + name + "id = " + city_Id, Toast.LENGTH_SHORT).show();
                 LogUtils.e(Arrays.toString(ids));
                 setNoSelect();
                 //如果id相同，则对应的热门和周边也变颜色
@@ -178,7 +178,7 @@ public class SelectCityActivity extends BaseActivity {
                 setSelect(3);
                 break;
             case R.id.tv_hotCity1:
-                Toast.makeText(SelectCityActivity.this, "name0 = " + name0 + "id0 = " + id0, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name0 = " + name0 + "id0 = " + id0, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name0);
                 setSelect(4);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -193,7 +193,7 @@ public class SelectCityActivity extends BaseActivity {
 
                 break;
             case R.id.tv_hotCity2:
-                Toast.makeText(SelectCityActivity.this, "name0 = " + name1 + "id0 = " + id1, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name0 = " + name1 + "id0 = " + id1, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name1);
                 setSelect(5);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -207,7 +207,7 @@ public class SelectCityActivity extends BaseActivity {
                 MyApplication.getMyApplication().setCityName(name1);
                 break;
             case R.id.tv_hotCity3:
-                Toast.makeText(SelectCityActivity.this, "name2 = " + name2 + "id2 = " + id2, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name2 = " + name2 + "id2 = " + id2, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name2);
                 setSelect(6);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -221,7 +221,7 @@ public class SelectCityActivity extends BaseActivity {
                 MyApplication.getMyApplication().setCityName(name2);
                 break;
             case R.id.tv_hotCity4:
-                Toast.makeText(SelectCityActivity.this, "name3 = " + name3 + "id3 = " + id3, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name3 = " + name3 + "id3 = " + id3, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name3);
                 setSelect(7);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -235,7 +235,7 @@ public class SelectCityActivity extends BaseActivity {
                 MyApplication.getMyApplication().setCityName(name3);
                 break;
             case R.id.tv_hotCity5:
-                Toast.makeText(SelectCityActivity.this, "name4 = " + name4 + "id4 = " + id4, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name4 = " + name4 + "id4 = " + id4, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name4);
                 setSelect(8);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -249,7 +249,7 @@ public class SelectCityActivity extends BaseActivity {
                 MyApplication.getMyApplication().setCityName(name4);
                 break;
             case R.id.tv_hotCity6:
-                Toast.makeText(SelectCityActivity.this, "name5 = " + name5 + "id5 = " + id5, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name5 = " + name5 + "id5 = " + id5, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name5);
                 setSelect(9);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -263,7 +263,7 @@ public class SelectCityActivity extends BaseActivity {
                 MyApplication.getMyApplication().setCityName(name5);
                 break;
             case R.id.tv_hotCity7:
-                Toast.makeText(SelectCityActivity.this, "name6 = " + name6 + "id6 = " + id6, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name6 = " + name6 + "id6 = " + id6, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name6);
                 setSelect(10);
                 for (int i = 0; i < totalList.size(); i++) {
@@ -277,7 +277,7 @@ public class SelectCityActivity extends BaseActivity {
                 MyApplication.getMyApplication().setCityName(name6);
                 break;
             case R.id.tv_hotCity8:
-                Toast.makeText(SelectCityActivity.this, "name7 = " + name7 + "id7 = " + id7, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SelectCityActivity.this, "name7 = " + name7 + "id7 = " + id7, Toast.LENGTH_SHORT).show();
                 tv_selectCity.setText("当前城市-" + name7);
                 setSelect(11);
                 for (int i = 0; i < totalList.size(); i++) {

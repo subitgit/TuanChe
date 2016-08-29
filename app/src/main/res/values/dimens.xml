@@ -4,4 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
+    <dimen name="lable25">20sp</dimen>
+    <dimen name="lable15">15sp</dimen>
+    <dimen name="lable12">12sp</dimen>
+>>>>>>> ed193deb3d8f84ba1324c7e499977bbd46c8d45e
 </resources>

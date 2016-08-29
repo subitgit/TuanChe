@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bwf.tuanche">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <!-- 这个权限用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -50,6 +53,7 @@
             android:value="qP8xQGb4IsYkyQy1Ca5YXd6QM0Wkstpj" />
 
         <activity android:name="com.bwf.czg_search.SearchActivity"></activity>
+        <activity android:name=".ui.carselect.CarSelectMainActivity"></activity>
     </application>
 
 </manifest>

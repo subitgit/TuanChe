@@ -49,4 +49,39 @@ public class HttpHelper {
                 .execute(callBack);
     }
 
+    public static void getBrandCarSelect(String url,String cityId,HttpArrayCallBack callBack){
+        OkHttpUtils
+                .post()
+                .addParams("cityId",cityId+"")
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getBrandCarSelectHot(String url,String cityId,HttpCallBack callBack){
+        OkHttpUtils
+                .post()
+                .addParams("cityId",cityId)
+                .addParams("isBuy","2")
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getOptionSelect(String url,HttpCallBack callBack){
+        OkHttpUtils
+                .post()
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+    public static void getPopWinCarList(String url,String cityId,String brandId,int type,HttpArrayCallBack callBack){
+        OkHttpUtils
+                .post()
+                .addParams("cityId",cityId+"")
+                .addParams("type",type+"")
+                .addParams("brandId",brandId)
+                .url(url)
+                .build()
+                .execute(callBack);
+    }
+
 }
