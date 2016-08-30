@@ -119,6 +119,7 @@ public class RefreshableListView extends ListView implements AbsListView.OnScrol
                 if (state == PULL_TO_REFRESH) {
 //                    headerView.setPadding(0, -headerViewHeight, 0, 0);
                     startValueAnim(headerView, Math.abs((int) (headerView.getPaddingTop() / speed)), headerView.getPaddingTop(), -headerViewHeight);
+                    state = DONE;
                 }
                 if (state == RELEASE_TO_REFRESH) {
 //                    headerView.setPadding(0, 0, 0, 0);
@@ -152,13 +153,14 @@ public class RefreshableListView extends ListView implements AbsListView.OnScrol
     }
 
 
+    private int oldItemCount;
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
         if (scrollState != SCROLL_STATE_IDLE || state == LOADING_MORE || state == REFRESHING) {
             return;
         }
         if (getLastVisiblePosition() == getCount() - 1 && getLastVisiblePosition() != 0) {
-            if ((getCount() - 3) % Constants.COUNTT == 0) {
+            if (oldItemCount != getCount() && (getCount() - 3) % Constants.COUNTT == 0) {
                 tv_noDatas.setText(context.getString(R.string.loading));
                 pb_loadmore.setVisibility(View.VISIBLE);
                 if (onLoadMoreListener != null) {
@@ -166,12 +168,13 @@ public class RefreshableListView extends ListView implements AbsListView.OnScrol
                     state = LOADING_MORE;
                 }
             } else {
-                tv_noDatas.setText(context.getString(R.string.no_more_datas));
                 pb_loadmore.setVisibility(View.INVISIBLE);
+                tv_noDatas.setText(context.getString(R.string.no_more_datas));
             }
 
 
         }
+        oldItemCount = getCount();
     }
 
     @Override
@@ -201,6 +204,8 @@ public class RefreshableListView extends ListView implements AbsListView.OnScrol
         int i = (int) (headerViewHeight / speed);
         startValueAnim(headerView, (int) (headerViewHeight / speed), 0, -headerViewHeight);
 //        headerView.setPadding(0, -headerViewHeight, 0, 0);
+        tv_noDatas.setText(context.getString(R.string.no_more_datas));
+        pb_loadmore.setVisibility(View.GONE);
         iv_refresh.setVisibility(View.VISIBLE);
         tv_refresh.setText(context.getString(R.string.pull_down_to_refresh));
     }

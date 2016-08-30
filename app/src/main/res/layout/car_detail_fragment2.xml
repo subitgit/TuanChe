@@ -69,7 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="查看全部32人评价"
             android:layout_centerVertical="true"
             android:textSize="14sp"
             android:textColor="@color/color_title_tv_red"
